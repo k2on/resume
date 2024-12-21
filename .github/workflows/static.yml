@@ -37,14 +37,17 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
-      - name: debug
+      - name: Move resume
         run: |
-          ls -la
+          mkdir out
+          mv resume.pdf out/resume.pdf
+          echo "\<title\>Max Koon\'s Resume\</title\>" >> out/index.html
+          echo "\<embed height='100%' width='100%' src='https://k2on.github.io/resume/resume.pdf' type='application/pdf' /\>" >> out/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: '.'
+          path: './out'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

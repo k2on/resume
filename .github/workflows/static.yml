@@ -46,7 +46,7 @@ jobs:
           echo "<head>" >> out/index.html
           echo "<title>Max Koon's Resume</title>" >> out/index.html
           echo "</head>" >> out/index.html
-          echo "<body>" >> out/index.html
+          echo "<body style='height: 100vh; margin: 0; overflow: hidden;'>" >> out/index.html
           echo "<embed height='100%' width='100%' src='https://resume.koon.us/resume.pdf' type='application/pdf' \>" >> out/index.html
           echo "</body>" >> out/index.html
           echo "</html>" >> out/index.html
